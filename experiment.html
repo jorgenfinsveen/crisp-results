@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experiment — CRISP Results</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="header-home">CRISP Results</a>
+    <span class="header-sep">/</span>
+    <span class="header-crumb" id="header-crumb">Loading…</span>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <a href="index.html" class="back-link">← All experiments</a>
+    <div id="app"><div class="state-loading">Loading experiment</div></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container" id="footer-text">CRISP Results</div>
+</footer>
+
+<script>
+const DATA_URL = 'data/experiments.json';
+
+async function loadData() {
+  const res = await fetch(DATA_URL);
+  if (!res.ok) throw new Error('HTTP ' + res.status);
+  return res.json();
+}
+
+function esc(str) {
+  return String(str ?? '')
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function formatDate(dateStr) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr + 'T12:00:00');
+  const days = Math.floor((Date.now() - d) / 86400000);
+  if (days === 0) return 'Today';
+  if (days === 1) return 'Yesterday';
+  if (days < 7) return days + ' days ago';
+  if (days < 30) return Math.floor(days / 7) + 'w ago';
+  return d.toLocaleDateString('no-NO', { day: 'numeric', month: 'short', year: 'numeric' });
+}
+
+function authorInitials(name) {
+  if (!name) return '?';
+  const parts = name.trim().split(/\s+/);
+  if (parts.length === 1) return parts[0][0].toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
+function renderExperiment(exp) {
+  const plots = [...(exp.plots ?? [])].sort((a, b) =>
+    (b.added ?? '').localeCompare(a.added ?? '')
+  );
+
+  const tags = (exp.tags ?? []).map(t => `<span class="badge badge-neutral">${esc(t)}</span>`).join('');
+
+  const header = `
+    <div class="page-header">
+      <h1 class="page-title">${esc(exp.name)}</h1>
+      ${tags ? `<div class="page-tags">${tags}</div>` : ''}
+      ${exp.created ? `<div class="page-created">Created ${formatDate(exp.created)}</div>` : ''}
+    </div>`;
+
+  const descBox = exp.description ? `
+    <div class="description-box">
+      <p>${esc(exp.description)}</p>
+    </div>` : '';
+
+  let plotsSection;
+  if (!plots.length) {
+    plotsSection = `
+      <div class="section-header">
+        <h2 class="section-title">Plots</h2>
+        <span class="section-count">0</span>
+      </div>
+      <div class="state-empty">
+        <div class="state-empty-title">No plots yet</div>
+        <div class="state-empty-text">Add plot entries to this experiment in data/experiments.json.</div>
+      </div>`;
+  } else {
+    const cards = plots.map(p => {
+      const initials = authorInitials(p.author);
+      return `
+        <div class="plot-card"
+          data-file="${esc(p.file)}"
+          data-exp="${esc(exp.id)}"
+          data-expname="${esc(exp.name)}"
+          data-name="${esc(p.name)}">
+          <div class="plot-card-body">
+            <div class="plot-card-title">${esc(p.name)}</div>
+            ${p.comment ? `<div class="plot-card-comment">${esc(p.comment)}</div>` : ''}
+          </div>
+          <div class="plot-card-footer">
+            ${p.author ? `
+              <div class="plot-card-author">
+                <span class="plot-card-author-icon">${esc(initials)}</span>
+                ${esc(p.author)}
+              </div>` : ''}
+            <span class="plot-card-date">${formatDate(p.added)}</span>
+          </div>
+        </div>`;
+    }).join('');
+
+    plotsSection = `
+      <div class="section-header">
+        <h2 class="section-title">Plots</h2>
+        <span class="section-count">${plots.length}</span>
+      </div>
+      <div class="grid">${cards}</div>`;
+  }
+
+  return header + descBox + `<section class="section">${plotsSection}</section>`;
+}
+
+async function init() {
+  const app = document.getElementById('app');
+  const id = new URLSearchParams(location.search).get('id');
+
+  if (!id) {
+    app.innerHTML = `<div class="state-error">No experiment ID provided. <a href="index.html" style="color:inherit;text-decoration:underline">Go back.</a></div>`;
+    return;
+  }
+
+  try {
+    const data = await loadData();
+    const exp = (data.experiments ?? []).find(e => e.id === id);
+
+    if (!exp) {
+      app.innerHTML = `<div class="state-error">Experiment "<strong>${esc(id)}</strong>" not found. <a href="index.html" style="color:inherit;text-decoration:underline">Go back.</a></div>`;
+      return;
+    }
+
+    const siteTitle = data.siteTitle ?? 'CRISP Results';
+    document.title = exp.name + ' — ' + siteTitle;
+    document.querySelector('.header-home').textContent = siteTitle;
+    document.getElementById('header-crumb').textContent = exp.name;
+
+    const plotCount = (exp.plots ?? []).length;
+    document.getElementById('footer-text').textContent =
+      exp.name + ' · ' + plotCount + ' plot' + (plotCount !== 1 ? 's' : '');
+
+    app.innerHTML = renderExperiment(exp);
+
+    document.querySelectorAll('.plot-card[data-file]').forEach(card => {
+      card.addEventListener('click', () => {
+        window.location.href = 'plot.html?file=' + encodeURIComponent(card.dataset.file) +
+          '&exp=' + encodeURIComponent(card.dataset.exp) +
+          '&expname=' + encodeURIComponent(card.dataset.expname) +
+          '&name=' + encodeURIComponent(card.dataset.name);
+      });
+    });
+  } catch (err) {
+    app.innerHTML = `<div class="state-error">Failed to load data: ${esc(err.message)}</div>`;
+  }
+}
+
+init();
+</script>
+</body>
+</html>

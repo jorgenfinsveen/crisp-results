@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plot — CRISP Results</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .plot-nav {
+      background: #2563eb;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      gap: 6px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+    }
+
+    .nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      font-size: 0.825rem;
+      font-weight: 500;
+      white-space: nowrap;
+      padding: 5px 10px;
+      border-radius: 6px;
+      transition: background 120ms ease, color 120ms ease;
+      flex-shrink: 0;
+    }
+
+    .nav-btn:hover {
+      background: rgba(255,255,255,0.18);
+      color: #fff;
+    }
+
+    .nav-sep {
+      color: rgba(255,255,255,0.3);
+      font-size: 1rem;
+      flex-shrink: 0;
+      user-select: none;
+    }
+
+    .nav-title {
+      flex: 1;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #fff;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-align: center;
+      padding: 0 8px;
+    }
+
+    iframe {
+      flex: 1;
+      border: none;
+      width: 100%;
+      min-height: 0;
+    }
+
+    .plot-error {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      color: #64748b;
+      font-size: 0.875rem;
+    }
+
+    .plot-error a {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="plot-nav">
+  <a href="index.html" class="nav-btn" id="home-btn">
+    <svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7A1 1 0 003 11h1v7a1 1 0 001 1h4v-5h2v5h4a1 1 0 001-1v-7h1a1 1 0 00.707-1.707l-7-7z"/>
+    </svg>
+    Home
+  </a>
+  <span class="nav-sep">/</span>
+  <a href="index.html" class="nav-btn" id="back-btn">← Back</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-title" id="plot-title">Plot</span>
+</nav>
+
+<iframe id="plot-frame" title="Plot"></iframe>
+
+<script>
+  const params = new URLSearchParams(location.search);
+  const file    = params.get('file');
+  const expId   = params.get('exp');
+  const expName = params.get('expname');
+  const name    = params.get('name');
+
+  if (name) {
+    document.title = name + ' — CRISP Results';
+    document.getElementById('plot-title').textContent = name;
+  }
+
+  const backBtn = document.getElementById('back-btn');
+  if (expId) {
+    backBtn.href = 'experiment.html?id=' + encodeURIComponent(expId);
+    backBtn.textContent = '← ' + (expName || 'Back');
+  }
+
+  if (file) {
+    document.getElementById('plot-frame').src = file;
+  } else {
+    document.getElementById('plot-frame').outerHTML =
+      '<div class="plot-error"><span>No plot file specified.</span><a href="index.html">Go home</a></div>';
+  }
+</script>
+</body>
+</html>
