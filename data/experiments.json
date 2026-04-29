@@ -4,25 +4,24 @@
     {
       "id": "concurrent_vs_sequential",
       "name": "Concurrent vs. sequential kernel execution",
-      "description": "Vi fant ut at GCStack ble mer presis når vi bruker sekvensiell kjøring av kerneler fremfor concurrent-modus. Concurrent er default, og den lar GPUen kjøre flere Vertex-kerneler samtidig. Hensikten med eksperimentet er å se hvorvidt det påvirker ytelsen når man slår av concurrent-modus.",
-      "tags": ["ORIN", "CPI-Stacks"],
       "created": "2026-04-29",
+      "description": "Vi fant ut at GCStack ble mer presis når vi bruker sekvensiell kjøring av kerneler fremfor concurrent-modus. Concurrent er default, og den lar GPUen kjøre flere Vertex-kerneler samtidig. Hensikten med eksperimentet er å se hvorvidt det påvirker ytelsen når man slår av concurrent-modus.",
       "plots": [
         {
-          "id": "concurrent_orin",
-          "name": "ORIN concurrent",
+          "id": "orin_sequential",
+          "name": "Orin sequential",
           "author": "Jørgen",
           "comment": "Dataen som plottes ble hentet med utdatert collect-pipeline.",
-          "file": "experiments/concurrent_vs_sequential/concurrent_orin.html",
-          "added": "2026-04-29"
+          "added": "2026-04-29",
+          "file": "experiments/concurrent_vs_sequential/orin_sequential.html"
         },
         {
-          "id": "sequential_orin",
-          "name": "ORIN sequential",
+          "id": "orin_concurrent",
+          "name": "Orin concurrent",
           "author": "Jørgen",
           "comment": "Dataen som plottes ble hentet med utdatert collect-pipeline.",
-          "file": "experiments/concurrent_vs_sequential/sequential_orin.html",
-          "added": "2026-04-29"
+          "added": "2026-04-29",
+          "file": "experiments/concurrent_vs_sequential/orin_concurrent.html"
         }
       ]
     }
