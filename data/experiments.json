@@ -6,6 +6,12 @@
       "name": "Concurrent vs. sequential kernel execution",
       "created": "2026-04-29",
       "description": "Vi fant ut at GCStack ble mer presis når vi bruker sekvensiell kjøring av kerneler fremfor concurrent-modus. Concurrent er default, og den lar GPUen kjøre flere Vertex-kerneler samtidig. Hensikten med eksperimentet er å se hvorvidt det påvirker ytelsen når man slår av concurrent-modus.",
+      "tags": [
+        "GCStack",
+        "Jetson ORIN",
+        "4K-UHD",
+        "Rendering"
+      ],
       "plots": [
         {
           "id": "orin_sequential",
@@ -22,6 +28,69 @@
           "comment": "Dataen som plottes ble hentet med utdatert collect-pipeline.",
           "added": "2026-04-29",
           "file": "experiments/concurrent_vs_sequential/orin_concurrent.html"
+        }
+      ]
+    },
+    {
+      "id": "rendering_qhd",
+      "name": "Rendering QHD",
+      "created": "2026-04-20",
+      "description": "Simuleringer av rendering-workloads i QHD (2K) oppløsning.",
+      "tags": [
+        "GCStack",
+        "Jetson ORIN",
+        "GeForce RTX3070",
+        "QHD",
+        "Rendering"
+      ],
+      "plots": [
+        {
+          "id": "cpi-stacks_rtx3070",
+          "name": "CPI-Stacks RTX3070",
+          "author": "Jørgen",
+          "added": "2026-04-20",
+          "comment": "",
+          "file": "experiments/rendering_2k/cpi-stacks_rtx3070.html"
+        },
+        {
+          "id": "cycle-stacks_orin",
+          "name": "Cycle-Stacks ORIN",
+          "author": "Jørgen",
+          "added": "2026-04-20",
+          "comment": "",
+          "file": "experiments/rendering_2k/cycle-stacks_orin.html"
+        },
+        {
+          "id": "instruction-stacks_rtx3070",
+          "name": "Instruction-Stacks RTX3070",
+          "author": "Jørgen",
+          "added": "2026-04-20",
+          "comment": "",
+          "file": "experiments/rendering_2k/instruction-stacks_rtx3070.html"
+        },
+        {
+          "id": "cycle-stacks_rtx3070",
+          "name": "Cycle-Stacks RTX3070",
+          "author": "Jørgen",
+          "added": "2026-04-20",
+          "comment": "",
+          "file": "experiments/rendering_2k/cycle-stacks_rtx3070.html"
+        },
+        {
+          "id": "cpi-stacks_orin",
+          "name": "CPI-Stacks ORIN",
+          "author": "Jørgen",
+          "added": "2026-04-20",
+          "comment": "",
+          "file": "experiments/rendering_2k/cpi-stacks_orin.html"
+        },
+        {
+          "id": "instruction-stacks_orin",
+          "name": "Instruction-Stacks ORIN",
+          "author": "Jørgen",
+          "added": "2026-04-20",
+          "comment": "",
+          "file": "experiments/rendering_2k/instruction-stacks_orin.html"
         }
       ]
     }
