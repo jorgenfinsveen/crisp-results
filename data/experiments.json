@@ -93,6 +93,22 @@
           "file": "experiments/rendering_2k/instruction-stacks_orin.html"
         }
       ]
+    },
+        {
+      "id": "rendering_4k-uhd",
+      "name": "Rendering 4K-UHD",
+      "created": "2026-04-29",
+      "description": "Simuleringer av rendering-workloads i 4K-UHD oppløsning.",
+      "tags": [
+        "GCStack",
+        "Jetson ORIN",
+        "GeForce RTX3070",
+        "4K-UHD",
+        "Rendering"
+      ],
+      "plots": [
+
+      ]
     }
   ]
 }
