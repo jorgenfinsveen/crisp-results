@@ -107,7 +107,24 @@
         "Rendering",
         "Concurrent"
       ],
-      "plots": []
+      "plots": [
+        {
+          "id": "cpi-stacks_rtx3070",
+          "name": "CPI-Stacks RTX3070",
+          "author": "Jørgen",
+          "added": "2026-05-12",
+          "comment": "",
+          "file": "experiments/rendering_4k-uhd-concurrent/cpi-stacks_rtx3070.html"
+        },
+        {
+          "id": "cpi-stacks_orin",
+          "name": "CPI-Stacks ORIN",
+          "author": "Jørgen",
+          "added": "2026-05-12",
+          "comment": "",
+          "file": "experiments/rendering_4k-uhd-concurrent/cpi-stacks_orin.html"
+        }
+      ]
     },
     {
       "id": "rendering_4k-uhd-sequential",
