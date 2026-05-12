@@ -189,6 +189,37 @@
           "file": "experiments/tpc-test/cpi-stacks_orin.html"
         }
       ]
+    },
+    {
+      "id": "early-stage-memory-bank-sensitivity-test",
+      "name": "Early Stage Memory Bank Sensitivity Test",
+      "created": "2026-05-12",
+      "description": "Simuleringer av 4K-UHD rendering-workloads med variasjon i både antall Streaming Multiprocessors (SMs) og Memory Banks (MBs).",
+      "tags": [
+        "GCStack",
+        "Jetson ORIN",
+        "GeForce RTX3070",
+        "4K-UHD",
+        "Memory Banks x Streaming Multiprocessors"
+      ],
+      "plots": [
+        {
+          "id": "cpi-stacks_rtx3070",
+          "name": "CPI-Stacks RTX3070",
+          "author": "Jørgen",
+          "added": "2026-05-12",
+          "comment": "",
+          "file": "experiments/early-stage-memory-bank-sensitivity-test/cpi-stacks_rtx3070.html"
+        },
+        {
+          "id": "cpi-stacks_orin",
+          "name": "CPI-Stacks ORIN",
+          "author": "Jørgen",
+          "added": "2026-05-12",
+          "comment": "",
+          "file": "experiments/early-stage-memory-bank-sensitivity-test/cpi-stacks_orin.html"
+        }
+      ]
     }
   ]
 }
