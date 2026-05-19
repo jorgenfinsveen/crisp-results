@@ -29,6 +29,7 @@
 
 <script>
 const DATA_URL = 'data/experiments.json';
+const SHOW_AUTHOR = false;
 
 async function loadData() {
   const res = await fetch(DATA_URL);
@@ -104,7 +105,7 @@ function renderExperiment(exp) {
             ${p.comment ? `<div class="plot-card-comment">${esc(p.comment)}</div>` : ''}
           </div>
           <div class="plot-card-footer">
-            ${p.author ? `
+            ${SHOW_AUTHOR && p.author ? `
               <div class="plot-card-author">
                 <span class="plot-card-author-icon">${esc(initials)}</span>
                 ${esc(p.author)}

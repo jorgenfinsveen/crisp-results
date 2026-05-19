@@ -144,7 +144,7 @@
           "id": "cpi-stacks_rtx3070",
           "name": "CPI-Stacks RTX3070",
           "author": "Jørgen",
-          "added": "2026-05-11",
+          "added": "2026-05-12",
           "comment": "",
           "file": "experiments/rendering_4k-uhd-sequential/cpi-stacks_rtx3070.html"
         },
@@ -152,9 +152,57 @@
           "id": "cpi-stacks_orin",
           "name": "CPI-Stacks ORIN",
           "author": "Jørgen",
-          "added": "2026-05-11",
+          "added": "2026-05-12",
           "comment": "",
           "file": "experiments/rendering_4k-uhd-sequential/cpi-stacks_orin.html"
+        }
+      ]
+    },
+    {
+      "id": "rendering_4k-uhd-mig",
+      "name": "Rendering 4K-UHD (MIG)",
+      "created": "2026-05-12",
+      "description": "Simuleringer av rendering-workloads i 4K-UHD oppløsning. Simuleringene er med delvis parallell kjøring (MIG) av kerneler.",
+      "tags": [
+        "GCStack",
+        "Jetson ORIN",
+        "GeForce RTX3070",
+        "4K-UHD",
+        "Rendering",
+        "MIG"
+      ],
+      "plots": [
+        {
+          "id": "cpi-stacks_rtx3070",
+          "name": "CPI-Stacks RTX3070",
+          "author": "Jørgen",
+          "added": "2026-05-12",
+          "comment": "",
+          "file": "experiments/rendering_4k-uhd-mig/cpi-stacks_rtx3070.html"
+        },
+        {
+          "id": "cpi-stacks_orin_with_clustering",
+          "name": "CPI-Stacks ORIN with Clustering",
+          "author": "Jørgen",
+          "added": "2026-05-12",
+          "comment": "",
+          "file": "experiments/rendering_4k-uhd-mig/cpi-stacks_orin_with_clustering.html"
+        },
+        {
+          "id": "cpi-stacks_orin",
+          "name": "CPI-Stacks ORIN",
+          "author": "Jørgen",
+          "added": "2026-05-12",
+          "comment": "",
+          "file": "experiments/rendering_4k-uhd-mig/cpi-stacks_orin.html"
+        },
+        {
+          "id": "cpi_stacks_rtx3070_with_clustering",
+          "name": "CPI_Stacks RTX3070 with Clustering",
+          "author": "Jørgen",
+          "added": "2026-05-12",
+          "comment": "",
+          "file": "experiments/rendering_4k-uhd-mig/cpi_stacks_rtx3070_with_clustering.html"
         }
       ]
     },
@@ -187,6 +235,39 @@
           "added": "2026-05-03",
           "comment": "",
           "file": "experiments/tpc-test/cpi-stacks_orin.html"
+        }
+      ]
+    },
+    {
+      "id": "gpc-test",
+      "name": "Processing Clusters Sensitivity",
+      "created": "2026-05-12",
+      "description": "Simuleringer en baseline RTX3070 og ORIN sammenlignet med varianter der vi har delt opp Streaming Multiprocessors, Texture Processing Clusters (TPC) og Graphics Processing Clusters (GPC).",
+      "tags": [
+        "GCStack",
+        "Jetson ORIN",
+        "GeForce RTX3070",
+        "4K-UHD",
+        "Rendering",
+        "Texture Processing Clusters (TPC)",
+        "Graphics Processing Clusters (GPC)"
+      ],
+      "plots": [
+        {
+          "id": "cpi-stacks_rtx3070",
+          "name": "CPI-Stacks RTX3070",
+          "author": "Jørgen",
+          "added": "2026-05-12",
+          "comment": "",
+          "file": "experiments/gpc-test/cpi-stacks_rtx3070.html"
+        },
+        {
+          "id": "cpi-stacks_orin",
+          "name": "CPI-Stacks ORIN",
+          "author": "Jørgen",
+          "added": "2026-05-12",
+          "comment": "",
+          "file": "experiments/gpc-test/cpi-stacks_orin.html"
         }
       ]
     },
