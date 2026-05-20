@@ -301,6 +301,38 @@
           "file": "experiments/early-stage-memory-bank-sensitivity-test/cpi-stacks_orin.html"
         }
       ]
+    },
+    {
+      "id": "memory-controllers",
+      "name": "Memory Controllers",
+      "created": "2026-05-13",
+      "description": "Simuleringer en baseline RTX3070 og ORIN sammenlignet med varianter der vi har forskjellig antall minnekontrollere.",
+      "tags": [
+        "GCStack",
+        "Jetson ORIN",
+        "GeForce RTX3070",
+        "4K-UHD",
+        "Rendering",
+        "Memory controllers"
+      ],
+      "plots": [
+        {
+          "id": "cpi-stacks_rtx3070",
+          "name": "CPI-Stacks RTX3070",
+          "author": "Ole Kristian",
+          "added": "2026-05-13",
+          "comment": "",
+          "file": "experiments/memory-controllers/cpi-stacks_rtx3070.html"
+        },
+        {
+          "id": "cpi-stacks_orin",
+          "name": "CPI-Stacks ORIN",
+          "author": "Ole Kristian",
+          "added": "2026-05-13",
+          "comment": "",
+          "file": "experiments/memory-controllers/cpi-stacks_orin.html"
+        }
+      ]
     }
   ]
 }
