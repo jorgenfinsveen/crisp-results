@@ -331,6 +331,22 @@
           "added": "2026-05-13",
           "comment": "",
           "file": "experiments/memory-controllers/cpi-stacks_orin.html"
+        },
+        {
+          "id": "cpi-stacks_rtx3070_finegrained",
+          "name": "CPI-Stacks RTX3070 Finegrained",
+          "author": "Ole Kristian",
+          "added": "2026-05-14",
+          "comment": "",
+          "file": "experiments/memory-controllers/cpi-stacks_rtx3070_finegrained.html"
+        },
+        {
+          "id": "cpi-stacks_orin_finegrained",
+          "name": "CPI-Stacks ORIN Finegrained",
+          "author": "Ole Kristian",
+          "added": "2026-05-14",
+          "comment": "",
+          "file": "experiments/memory-controllers/cpi-stacks_orin_finegrained.html"
         }
       ]
     }
