@@ -373,12 +373,28 @@
           "file": "experiments/compute/cpi-stacks_rtx3070.html"
         },
         {
+          "id": "cpi-stacks_rtx3070_with_clustering",
+          "name": "CPI-Stacks RTX3070 with Clustering",
+          "author": "Jørgen",
+          "added": "2026-05-25",
+          "comment": "",
+          "file": "experiments/compute/cpi-stacks_rtx3070_with_clustering.html"
+        },
+        {
           "id": "cpi-stacks_orin",
           "name": "CPI-Stacks ORIN",
           "author": "Jørgen",
           "added": "2026-05-25",
           "comment": "",
           "file": "experiments/compute/cpi-stacks_orin.html"
+        },
+        {
+          "id": "cpi-stacks_orin_with_clustering",
+          "name": "CPI-Stacks ORIN with Clustering",
+          "author": "Jørgen",
+          "added": "2026-05-25",
+          "comment": "",
+          "file": "experiments/compute/cpi-stacks_orin_with_clustering.html"
         }
       ]
     }
