@@ -395,6 +395,70 @@
           "added": "2026-05-25",
           "comment": "",
           "file": "experiments/compute/cpi-stacks_orin_with_clustering.html"
+        },
+        {
+          "id": "rtx3070_sequential",
+          "name": "RTX3070 Sequential",
+          "author": "Jørgen",
+          "added": "2026-05-25",
+          "comment": "",
+          "file": "experiments/compute/rtx3070_sequential.html"
+        },
+        {
+          "id": "orin_sequential_with_clustering",
+          "name": "Orin Sequential with Clustering",
+          "author": "Jørgen",
+          "added": "2026-05-25",
+          "comment": "",
+          "file": "experiments/compute/orin_sequential_with_clustering.html"
+        },
+        {
+          "id": "rtx3070_sequential_with_clustering",
+          "name": "RTX3070 Sequential with Clustering",
+          "author": "Jørgen",
+          "added": "2026-05-25",
+          "comment": "",
+          "file": "experiments/compute/rtx3070_sequential_with_clustering.html"
+        },
+        {
+          "id": "orin_sequential",
+          "name": "Orin Sequential",
+          "author": "Jørgen",
+          "added": "2026-05-25",
+          "comment": "",
+          "file": "experiments/compute/orin_sequential.html"
+        },
+        {
+          "id": "rtx3070_mig",
+          "name": "RTX3070 MIG",
+          "author": "Jørgen",
+          "added": "2026-05-25",
+          "comment": "",
+          "file": "experiments/compute/rtx3070_mig.html"
+        },
+        {
+          "id": "rtx3070_mig_with_clustering",
+          "name": "RTX3070 MIG with Clustering",
+          "author": "Jørgen",
+          "added": "2026-05-25",
+          "comment": "",
+          "file": "experiments/compute/rtx3070_mig_with_clustering.html"
+        },
+        {
+          "id": "orin_mig",
+          "name": "Orin MIG",
+          "author": "Jørgen",
+          "added": "2026-05-25",
+          "comment": "",
+          "file": "experiments/compute/orin_mig.html"
+        },
+        {
+          "id": "orin_mig_with_clustering",
+          "name": "Orin MIG with Clustering",
+          "author": "Jørgen",
+          "added": "2026-05-25",
+          "comment": "",
+          "file": "experiments/compute/orin_mig_with_clustering.html"
         }
       ]
     }
