@@ -366,7 +366,7 @@
       "plots": [
         {
           "id": "cpi-stacks_rtx3070",
-          "name": "CPI-Stacks RTX3070",
+          "name": "RTX3070 Concurrent",
           "author": "Jørgen",
           "added": "2026-05-25",
           "comment": "",
@@ -374,7 +374,7 @@
         },
         {
           "id": "cpi-stacks_rtx3070_with_clustering",
-          "name": "CPI-Stacks RTX3070 with Clustering",
+          "name": "RTX3070 Concurrent with Clustering",
           "author": "Jørgen",
           "added": "2026-05-25",
           "comment": "",
@@ -382,7 +382,7 @@
         },
         {
           "id": "cpi-stacks_orin",
-          "name": "CPI-Stacks ORIN",
+          "name": "Orin Concurrent",
           "author": "Jørgen",
           "added": "2026-05-25",
           "comment": "",
@@ -390,7 +390,7 @@
         },
         {
           "id": "cpi-stacks_orin_with_clustering",
-          "name": "CPI-Stacks ORIN with Clustering",
+          "name": "ORIN Concurrent with Clustering",
           "author": "Jørgen",
           "added": "2026-05-25",
           "comment": "",
