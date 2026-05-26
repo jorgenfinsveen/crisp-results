@@ -474,11 +474,13 @@
       "id": "pae-bim",
       "name": "PAE-BIM",
       "created": "2026-05-23",
-      "description": "",
+      "description": "Testing av forskjellige versjoner av en Binary Invertible Matrix (BIM) for address mapping policyen PAE. Testene evaluerer 3 forskjellige BIM-versjoner som blir simulert på baseline GPU-modellene.",
       "tags": [
         "GCStack",
         "Jetson ORIN",
-        "GeForce RTX3070"
+        "GeForce RTX3070",
+        "PAE",
+        "BIM"
       ],
       "plots": [
         {
@@ -503,11 +505,16 @@
       "id": "address-mapping-policies",
       "name": "Address Mapping Policies",
       "created": "2026-05-24",
-      "description": "",
+      "description": "Testing av forskjellige address mapping policies på baseline GPU-ene for rendering-workloads for å forbedre båndbreddeutnyttelse og CPI.",
       "tags": [
         "GCStack",
         "Jetson ORIN",
-        "GeForce RTX3070"
+        "GeForce RTX3070",
+        "Address Mapping",
+        "CONSECUTIVE",
+        "BITWISE",
+        "IPOLY",
+        "PAE"
       ],
       "plots": [
         {
