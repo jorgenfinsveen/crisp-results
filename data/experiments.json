@@ -377,7 +377,7 @@
           "name": "RTX3070 Concurrent",
           "author": "Jørgen",
           "added": "2026-05-25",
-          "comment": "",
+          "comment": "For Fisheye fra 46 SMs og utover er det knapt forbedring. Det samme gjelder for KLT Tracker fra 69 SMs og utover.",
           "file": "experiments/compute/cpi-stacks_rtx3070.html"
         },
         {
@@ -385,7 +385,7 @@
           "name": "RTX3070 Concurrent with Clustering",
           "author": "Jørgen",
           "added": "2026-05-25",
-          "comment": "",
+          "comment": "SM-dominant fordeling gir best resultat, men TPC-fordeling er ganske nær. GPC-fordeling gir markant dårligere resultater.",
           "file": "experiments/compute/cpi-stacks_rtx3070_with_clustering.html"
         },
         {
@@ -393,7 +393,7 @@
           "name": "Orin Concurrent",
           "author": "Jørgen",
           "added": "2026-05-25",
-          "comment": "",
+          "comment": "Fisheye utvikler seg positivt fram til 16 SMs og deretter negativt.",
           "file": "experiments/compute/cpi-stacks_orin.html"
         },
         {
@@ -401,7 +401,7 @@
           "name": "ORIN Concurrent with Clustering",
           "author": "Jørgen",
           "added": "2026-05-25",
-          "comment": "",
+          "comment": "SM-dominant fordeling gir best resultat, men TPC-fordeling er ganske nær. GPC-fordeling gir markant dårligere resultater.",
           "file": "experiments/compute/cpi-stacks_orin_with_clustering.html"
         },
         {
@@ -409,7 +409,7 @@
           "name": "RTX3070 Sequential",
           "author": "Jørgen",
           "added": "2026-05-25",
-          "comment": "",
+          "comment": "Alle workloads opplever en forbedring, men denne slaker ut og er mest synlig i overgangen fra 12 til 23 SMs. Fra 69 SMs og utover er det knapt forbedring.",
           "file": "experiments/compute/rtx3070_sequential.html"
         },
         {
@@ -417,7 +417,7 @@
           "name": "Orin Sequential with Clustering",
           "author": "Jørgen",
           "added": "2026-05-25",
-          "comment": "",
+          "comment": "Det er nærmest ingen forskjell på 16 SMs x 1 TPC og 8 SMs x 2 TPCs.",
           "file": "experiments/compute/orin_sequential_with_clustering.html"
         },
         {
@@ -425,7 +425,7 @@
           "name": "RTX3070 Sequential with Clustering",
           "author": "Jørgen",
           "added": "2026-05-25",
-          "comment": "",
+          "comment": "Finished execution og last instruction stiger ved clustering. Det er nærmest ingen forskjell på 48 SMs x 1 TPC og 23 SMs x 2 TPCs, men GPC-fordeling gjør det markant dårligere.",
           "file": "experiments/compute/rtx3070_sequential_with_clustering.html"
         },
         {
@@ -433,7 +433,7 @@
           "name": "Orin Sequential",
           "author": "Jørgen",
           "added": "2026-05-25",
-          "comment": "",
+          "comment": "Fisheye responderer kontinuerlig negativt ved økning av antall SMs, men på 8 SMs skiller den seg ut og gjør det bedre enn alle de andre konfigurasjonene.",
           "file": "experiments/compute/orin_sequential.html"
         },
         {
@@ -441,7 +441,7 @@
           "name": "RTX3070 MIG",
           "author": "Jørgen",
           "added": "2026-05-25",
-          "comment": "",
+          "comment": "Ingen workload fullførte for 12 SMs. Ellers så viser resultatene en stagnerende ytelsesforbedring.",
           "file": "experiments/compute/rtx3070_mig.html"
         },
         {
@@ -449,7 +449,7 @@
           "name": "RTX3070 MIG with Clustering",
           "author": "Jørgen",
           "added": "2026-05-25",
-          "comment": "",
+          "comment": "For 8 SMs x 1 TPC x 6 GPCs var det ingen workload som fullførte.",
           "file": "experiments/compute/rtx3070_mig_with_clustering.html"
         },
         {
@@ -457,7 +457,7 @@
           "name": "Orin MIG",
           "author": "Jørgen",
           "added": "2026-05-25",
-          "comment": "",
+          "comment": "Her var det mange instanser som ikke fullførte. Ingen workload fullførte når antall SMs var 4 eller 8.",
           "file": "experiments/compute/orin_mig.html"
         },
         {
@@ -465,7 +465,7 @@
           "name": "Orin MIG with Clustering",
           "author": "Jørgen",
           "added": "2026-05-25",
-          "comment": "",
+          "comment": "Her var det kun 16 SMs x 1 TPC x 1 GPC som klarte å fullføre.",
           "file": "experiments/compute/orin_mig_with_clustering.html"
         }
       ]
@@ -488,7 +488,7 @@
           "name": "RTX3070 CPI-Stacks",
           "author": "Ole Kristian",
           "added": "2026-05-23",
-          "comment": "",
+          "comment": "Sponza fullførte ikke for BIM 3. Jevnt over så er det nærmest ingen forskjell i ytelse på BIM-versjonene med unntak av Sponza som ser ut til å foretrekke BIM 1 litt bedre enn BIM 2.",
           "file": "experiments/pae-bim/rtx3070_cpi-stacks.html"
         },
         {
@@ -496,7 +496,7 @@
           "name": "Orin CPI-Stacks",
           "author": "Ole Kristian",
           "added": "2026-05-23",
-          "comment": "",
+          "comment": "Sponza fullførte ikke for noen av BIM variantene. Forøvrig så er det tilnærmet ingen forskjell i ytelse for de resterende workloadene, uavhengig av BIM varianten.",
           "file": "experiments/pae-bim/orin_cpi-stacks.html"
         }
       ]
@@ -522,7 +522,7 @@
           "name": "Total L2 Bandwidth",
           "author": "Ole Kristian",
           "added": "2026-05-24",
-          "comment": "",
+          "comment": "Jevnt over så ser BITWISE ut til å gi beste utnyttelse av båndbredde.",
           "file": "experiments/address-mapping-policies/total_l2_bandwidth.html"
         },
         {
@@ -530,7 +530,7 @@
           "name": "RTX3070 CPI-Stacks",
           "author": "Ole Kristian",
           "added": "2026-05-24",
-          "comment": "",
+          "comment": "Sponza feilet for BITWISE og IPOLY. Jevnt over så virker det som at BITWISE og IPOLY ga de beste resultatene. CONSECUTIVE gjorde det dårligst sammenlagt.",
           "file": "experiments/address-mapping-policies/rtx3070_cpi-stacks.html"
         },
         {
@@ -538,7 +538,7 @@
           "name": "Orin CPI-Stacks",
           "author": "Ole Kristian",
           "added": "2026-05-24",
-          "comment": "",
+          "comment": "Sponza feilet for BITWISE og PAE. Jevnt over så virker det som at det knapt er noen ytelsesforskjell på policyene, med unntak for Gears, hvor CONSECUTIVE gjorde det ekstremt dårlig sammenlignet med resten.",
           "file": "experiments/address-mapping-policies/orin_cpi-stacks.html"
         }
       ]
