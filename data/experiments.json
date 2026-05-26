@@ -347,6 +347,14 @@
           "added": "2026-05-14",
           "comment": "",
           "file": "experiments/memory-controllers/cpi-stacks_orin_finegrained.html"
+        },
+        {
+          "id": "total_l2_bandwidth",
+          "name": "Total L2 Bandwidth",
+          "author": "Ole Kristian",
+          "added": "2026-05-25",
+          "comment": "",
+          "file": "experiments/memory-controllers/total_l2_bandwidth.html"
         }
       ]
     },
@@ -459,6 +467,72 @@
           "added": "2026-05-25",
           "comment": "",
           "file": "experiments/compute/orin_mig_with_clustering.html"
+        }
+      ]
+    },
+    {
+      "id": "pae-bim",
+      "name": "PAE-BIM",
+      "created": "2026-05-23",
+      "description": "",
+      "tags": [
+        "GCStack",
+        "Jetson ORIN",
+        "GeForce RTX3070"
+      ],
+      "plots": [
+        {
+          "id": "rtx3070_cpi-stacks",
+          "name": "RTX3070 CPI-Stacks",
+          "author": "Ole Kristian",
+          "added": "2026-05-23",
+          "comment": "",
+          "file": "experiments/pae-bim/rtx3070_cpi-stacks.html"
+        },
+        {
+          "id": "orin_cpi-stacks",
+          "name": "Orin CPI-Stacks",
+          "author": "Ole Kristian",
+          "added": "2026-05-23",
+          "comment": "",
+          "file": "experiments/pae-bim/orin_cpi-stacks.html"
+        }
+      ]
+    },
+    {
+      "id": "address-mapping-policies",
+      "name": "Address Mapping Policies",
+      "created": "2026-05-24",
+      "description": "",
+      "tags": [
+        "GCStack",
+        "Jetson ORIN",
+        "GeForce RTX3070"
+      ],
+      "plots": [
+        {
+          "id": "total_l2_bandwidth",
+          "name": "Total L2 Bandwidth",
+          "author": "Ole Kristian",
+          "added": "2026-05-24",
+          "comment": "",
+          "file": "experiments/address-mapping-policies/total_l2_bandwidth.html"
+        },
+        {
+          "id": "rtx3070_cpi-stacks",
+          "name": "RTX3070 CPI-Stacks",
+          "author": "Ole Kristian",
+          "added": "2026-05-24",
+          "comment": "",
+          "file": "experiments/address-mapping-policies/rtx3070_cpi-stacks.html"
+        },
+        {
+          "id": "orin_cpi-stacks",
+          "name": "Orin CPI-Stacks",
+          "author": "Ole Kristian",
+          "added": "2026-05-24",
+          "comment": "",
+          "file": "experiments/address-mapping-policies/orin_cpi-stacks.html"
         }
       ]
     }
